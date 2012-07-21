@@ -1,9 +1,12 @@
 package uk.co.eelpieconsulting.busroutes.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Stop {
+public class Stop implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private final int id;
 	private final String name;

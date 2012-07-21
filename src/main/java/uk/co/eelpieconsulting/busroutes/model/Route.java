@@ -1,7 +1,11 @@
 package uk.co.eelpieconsulting.busroutes.model;
 
-public class Route {
+import java.io.Serializable;
 
+public class Route implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private final String route;
 	private final int run;
 	private final String towards;
