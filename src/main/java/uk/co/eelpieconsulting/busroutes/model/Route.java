@@ -6,10 +6,13 @@ public class Route implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private final String route;
-	private final int run;
-	private final String towards;
+	private String route;
+	private int run;
+	private String towards;
 
+	public Route() {
+	}
+		
 	public Route(String route, int run, String towards) {
 		this.route = route;
 		this.run = run;		

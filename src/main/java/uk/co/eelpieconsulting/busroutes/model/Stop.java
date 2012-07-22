@@ -8,15 +8,18 @@ public class Stop implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private final int id;
-	private final String name;
-	private final String towards;
-	private final String indicator;
-	private final double latitude;
-	private final double longitude;
-	private final Set<Route> routes;
-	private final Boolean nationalRail, tube;
-
+	private int id;
+	private String name;
+	private String towards;
+	private String indicator;
+	private double latitude;
+	private double longitude;
+	private Set<Route> routes;
+	private Boolean nationalRail, tube;
+	
+	public Stop() {
+	}
+	
 	public Stop(int id, String name, String towards, String indicator, double latitude, double longitude, Boolean nationalRail, Boolean tube) {
 		this.id = id;
 		this.name = name;
@@ -69,6 +72,18 @@ public class Stop implements Serializable {
 		return routes;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setTowards(String towards) {
+		this.towards = towards;
+	}
+
+	public void setIndicator(String indicator) {
+		this.indicator = indicator;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
