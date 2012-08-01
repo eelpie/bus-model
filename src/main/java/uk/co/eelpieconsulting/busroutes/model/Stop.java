@@ -18,6 +18,7 @@ public class Stop implements Serializable {
 	private Boolean nationalRail, tube;
 	
 	public Stop() {
+		this.routes = new HashSet<Route>();
 	}
 	
 	public Stop(int id, String name, String towards, String indicator, double latitude, double longitude, Boolean nationalRail, Boolean tube) {
