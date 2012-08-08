@@ -15,13 +15,13 @@ public class Stop implements Serializable {
 	private double latitude;
 	private double longitude;
 	private Set<Route> routes;
-	private Boolean nationalRail, tube;
+	private Boolean nationalRail, tube, tram;
 	
 	public Stop() {
 		this.routes = new HashSet<Route>();
 	}
 	
-	public Stop(int id, String name, String towards, String indicator, double latitude, double longitude, Boolean nationalRail, Boolean tube) {
+	public Stop(int id, String name, String towards, String indicator, double latitude, double longitude, Boolean nationalRail, Boolean tube, Boolean tram) {
 		this.id = id;
 		this.name = name;
 		this.towards = towards;
@@ -30,6 +30,7 @@ public class Stop implements Serializable {
 		this.longitude = longitude;
 		this.nationalRail = nationalRail;
 		this.tube = tube;
+		this.tram = tram;
 		this.routes = new HashSet<Route>();
 	}
 
@@ -64,7 +65,11 @@ public class Stop implements Serializable {
 	public Boolean isTube() {
 		return tube;
 	}
-
+	
+	public Boolean isTram() {
+		return tram;
+	}
+	
 	public void addRoute(Route route) {
 		routes.add(route);
 	}
@@ -109,10 +114,11 @@ public class Stop implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Stop [id=" + id + ", indicator=" + indicator + ", latitude="
-				+ latitude + ", longitude=" + longitude + ", name=" + name
-				+ ", nationalRail=" + nationalRail + ", routes=" + routes
-				+ ", towards=" + towards + ", tube=" + tube + "]";
+		return "Stop [id=" + id + ", name=" + name + ", towards=" + towards
+				+ ", indicator=" + indicator + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", routes=" + routes
+				+ ", nationalRail=" + nationalRail + ", tube=" + tube
+				+ ", tram=" + tram + "]";
 	}
 	
 }
